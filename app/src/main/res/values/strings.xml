@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Intentos</string>
+    <string name="nombre">FERNANDO</string>
+    <string name="telefono">123456</string>
+    <string name="email">fernando@fernando.com</string>
+    <string name="edad">35</string>
+</resources>
