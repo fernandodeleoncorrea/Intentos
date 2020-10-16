@@ -21,11 +21,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         contactos = new ArrayList<Contacto>();
-        contactos.add(new Contacto("Pepe Suarez", "1111111", "pepe@pepe.com"));
-        contactos.add(new Contacto("Juan Peres", "2222222","juan@juan.com"));
-        contactos.add(new Contacto("Laura Rosa", "333333", "laura@laura.com"));
-        contactos.add(new Contacto("Tuna Mate", "444444","tuna@tuna.com"));
-        contactos.add(new Contacto("papel Fernandez", "55555", "papel@papel.com"));
+        contactos.add(new Contacto("Pepe Suarez", "1111111", "pepe@pepe.com", R.drawable.escudo));
+        contactos.add(new Contacto("Juan Peres", "2222222","juan@juan.com", R.drawable.marcianito2));
+        contactos.add(new Contacto("Chori Castro", "333333", "chori@chori.com", R.drawable.marcianito_android9));
+        contactos.add(new Contacto("Gomito Corujo", "444444","gomito@gomito.com", R.drawable.mail));
+        contactos.add(new Contacto("Sebita Fernandez", "55555", "papel@papel.com", R.drawable.phone));
 
         ArrayList<String> nombresContacto = new ArrayList<>();
 
