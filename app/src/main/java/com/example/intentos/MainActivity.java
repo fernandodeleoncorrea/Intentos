@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<Contacto> contactos;
     private RecyclerView listaContactos;
-
+    public ContactoAdaptador adaptador;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,9 +56,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
     }
-    public void inicializarAdaptador(){
-        ContactoAdaptador Adaptador = new ContactoAdaptador(contactos);
-        listaContactos.setAdapter(Adaptador);
+    private void inicializarAdaptador(){
+        adaptador = new ContactoAdaptador(contactos, this);
+        listaContactos.setAdapter(adaptador);
     }
     public void inicializarListaDeContactos(){
         contactos = new ArrayList<Contacto>();
