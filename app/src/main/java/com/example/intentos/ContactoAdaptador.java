@@ -13,8 +13,11 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 import java.util.ArrayList;
 
 public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.ContactoViewHolder>{
-
     ArrayList<Contacto> contactos;
+
+    public ContactoAdaptador(ArrayList<Contacto> contactos) {
+        this.contactos = contactos;
+    }
 
     @NonNull
     @Override
