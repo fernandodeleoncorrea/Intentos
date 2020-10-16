@@ -4,70 +4,79 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toolbar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<Contacto> contactos;
-    private RecyclerView listaContactos;
-    public ContactoAdaptador adaptador;
+    ArrayList<Mascota> Mascotas;
+    private RecyclerView listaMascotas;
+    public MascotaAdaptador adaptador;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listaContactos = (RecyclerView) findViewById(R.id.rvContactos);
+        //Toolbar miActionBar = findViewById(R.id.miActionbar);
+        //setSupportActionBar(miActionBar);
+
+        listaMascotas = (RecyclerView) findViewById(R.id.rvMascotas);
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
 
-        listaContactos.setLayoutManager(llm);
+        listaMascotas.setLayoutManager(llm);
 
-        inicializarListaDeContactos();
+        inicializarListaDeMascotas();
         inicializarAdaptador();
 
-        /*
-        ArrayList<String> nombresContacto = new ArrayList<>();
 
-        for (Contacto contacto : contactos) {
-            nombresContacto.add(contacto.getNombre());
+        ArrayList<String> nombresMascota = new ArrayList<>();
+        /*
+        for (Mascota Mascota : Mascotas) {
+            nombresMascota.add(Mascota.getNombre());
         }
 
-        ListView lstContactos = (ListView) findViewById(R.id.lstContactos);
-        lstContactos.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,nombresContacto));
+        ListView lstMascotas = (ListView) findViewById(R.id.lstMascotas);
+        lstMascotas.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,nombresMascota));
 
-        lstContactos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listaMascotas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //intent Explicito
-                Intent intent = new Intent(MainActivity.this, DetalleContacto.class);
-                intent.putExtra("NOMBRE", contactos.get(position).getNombre());
-                intent.putExtra("TELEFONO", contactos.get(position).getTelefono() );
-                intent.putExtra("EMAIL", contactos.get(position).getEmail() );
+                Intent intent = new Intent(MainActivity.this, DetalleMascota.class);
+                intent.putExtra("NOMBRE", Mascotas.get(position).getNombre());
+                intent.putExtra("TELEFONO", Mascotas.get(position).getTelefono() );
+                intent.putExtra("EMAIL", Mascotas.get(position).getEmail() );
                 startActivity(intent);
             }
         });*/
     }
     private void inicializarAdaptador(){
-        adaptador = new ContactoAdaptador(contactos, this);
-        listaContactos.setAdapter(adaptador);
+        adaptador = new MascotaAdaptador(Mascotas, this);
+        listaMascotas.setAdapter(adaptador);
     }
-    public void inicializarListaDeContactos(){
-        contactos = new ArrayList<Contacto>();
-        contactos.add(new Contacto("Pepe Suarez", "1111111", "pepe@pepe.com", R.drawable.escudo));
-        contactos.add(new Contacto("Juan Peres", "2222222","juan@juan.com", R.drawable.marcianito2));
-        contactos.add(new Contacto("Chori Castro", "333333", "chori@chori.com", R.drawable.marcianito_android9));
-        contactos.add(new Contacto("Gomito Corujo", "444444","gomito@gomito.com", R.drawable.mail));
-        contactos.add(new Contacto("Sebita Fernandez", "55555", "papel@papel.com", R.drawable.phone));
+    public void inicializarListaDeMascotas(){
+        Mascotas = new ArrayList<Mascota>();
+        Mascotas.add(new Mascota("Perro", "perro del sofa", "4", R.drawable.perro));
+        Mascotas.add(new Mascota("Gato", "gato del sillon","2", R.drawable.gato));
+        Mascotas.add(new Mascota("Lagarto", "lagartija", "17", R.drawable.lagarto));
+        Mascotas.add(new Mascota("Chancho", "puerco del jardin","5", R.drawable.chancho));
+        Mascotas.add(new Mascota("Pato", "pato del estanque", "0", R.drawable.pato));
+    }
 
-
+    public void irSiguienteActividad(View w){
+        Intent intent = new Intent(MainActivity.this, DetalleMascota.class);
+        startActivity(intent);
     }
 }

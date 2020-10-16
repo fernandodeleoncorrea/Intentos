@@ -28,7 +28,7 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
     @NonNull
     @Override
     public ContactoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_contacto, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_mascota, parent, false);
         return new ContactoViewHolder(v);
     }
 
@@ -75,7 +75,7 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
             super(itemView);
             imgFotoCV       = (ImageView) itemView.findViewById(R.id.imgFotoCV);
             tvNombreCV      = (TextView) itemView.findViewById(R.id.tvNombreCV);
-            tvTelefonoCV    = (TextView) itemView.findViewById(R.id.tvTelefonoCV);
+            tvTelefonoCV    = (TextView) itemView.findViewById(R.id.tvNombreCV);
             btnLike         = (ImageButton) itemView.findViewById(R.id.btnLike);
         }
     }

@@ -7,7 +7,8 @@
 
     <include
         android:id="@+id/miActionbar"
-        layout="@layout/actionbar">
+        layout="@layout/actionbar"
+        >
 
     </include>
 <!--
@@ -25,7 +26,7 @@
     </include>
   -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvContactos"
+        android:id="@+id/rvMascotas"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         >
