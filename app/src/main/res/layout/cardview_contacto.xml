@@ -8,6 +8,11 @@
     android:layout_marginBottom="16dp"
     card_view:cardCornerRadius="4dp"
     >
+    <include
+        android:id="@+id/miActionbar"
+        layout="@layout/actionbar">
+
+    </include>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
